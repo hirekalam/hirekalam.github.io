@@ -8,7 +8,6 @@
     <title>Contact Kalam: Web Design & Digital Marketing Expert in Dubai, UAE</title>
     <link rel="icon" href="contact/hire-kalam-contact.webp" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         * {
@@ -25,7 +24,7 @@
             overflow-x: hidden;
         }
 
-        #particles-js {
+        #particles-canvas {
             position: fixed;
             top: 0;
             left: 0;
@@ -113,6 +112,7 @@
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
+            color: font-size: 1.5rem;
             color: #fff;
         }
 
@@ -325,15 +325,10 @@
             font-size: 1.1em;
         }
 
-        #stats, .count-particles {
+        .count-particles {
             -webkit-user-select: none;
             margin-top: 5px;
             margin-left: 5px;
-        }
-
-        #stats {
-            border-radius: 3px 3px 0 0;
-            overflow: hidden;
         }
 
         .count-particles {
@@ -352,7 +347,7 @@
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
+    <canvas id="particles-canvas"></canvas>
     <div class="count-particles"> <span class="js-count-particles">--</span> particles </div>
 
     <nav>
@@ -373,10 +368,10 @@
 
     <section class="contact">
         <div class="contact-container">
-            <div class="contact-photo" data-aos="fade-right">
+            <div class="contact-photo">
                 <img src="contact-photo.jpg" alt="Contact Kalam">
             </div>
-            <div class="contact-form" data-aos="fade-left">
+            <div class="contact-form">
                 <h2>Get in Touch</h2>
                 <form action="https://formspree.io/f/meogaakj" method="POST">
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -426,139 +421,107 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        AOS.init();
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
 
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 400,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ff0000"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    },
-                    "image": {
-                        "src": "img/github.svg",
-                        "width": 100,
-                        "height": 100
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 10,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": false,
-                    "distance": 500,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 2
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "bottom",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = Math.random() * 6 + 1;
+                this.size = Math.random() * 10 + 5;
+                this.opacity = Math.random() * 0.5 + 0.5;
+                this.baseSize = this.size;
+                this.baseOpacity = this.opacity;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.y > canvas.height) {
+                    this.y = 0;
+                    this.x = Math.random() * canvas.width;
+                    this.vx = (Math.random() - 0.5) * 2;
+                    this.vy = Math.random() * 6 + 1;
+                }
+
+                this.vx *= 0.99;
+                this.vy *= 0.99;
+
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        const factor = 1 - distance / mouse.radius;
+                        this.size = this.baseSize + factor * 10;
+                        this.opacity = Math.min(this.baseOpacity + factor * 0.5, 1);
+                    } else {
+                        this.size = this.baseSize;
+                        this.opacity = this.baseOpacity;
                     }
                 }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "bubble"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 400,
-                        "line_linked": {
-                            "opacity": 0.5
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 4,
-                        "duration": 0.3,
-                        "opacity": 1,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 0, 0, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        const particles = [];
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 400
+        };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
         });
 
-        var count_particles, stats, update;
-        stats = new Stats();
-        stats.setMode(0);
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.left = '0px';
-        stats.domElement.style.top = '0px';
-        document.body.appendChild(stats.domElement);
-        count_particles = document.querySelector('.js-count-particles');
-        update = function () {
-            stats.begin();
-            stats.end();
-            if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-            }
-            requestAnimationFrame(update);
-        };
-        requestAnimationFrame(update);
+        window.addEventListener('click', (e) => {
+            const clickX = e.x;
+            const clickY = e.y;
+            particles.forEach(p => {
+                const dx = p.x - clickX;
+                const dy = p.y - clickY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 200) {
+                    const angle = Math.atan2(dy, dx);
+                    p.vx += Math.cos(angle) * 10;
+                    p.vy += Math.sin(angle) * 10;
+                }
+            });
+        });
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            document.querySelector('.js-count-particles').innerText = particles.length;
+            requestAnimationFrame(animate);
+        }
+        animate();
 
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
