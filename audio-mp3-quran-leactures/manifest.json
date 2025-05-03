@@ -1,0 +1,22 @@
+{
+    "name": "Hire Kalam - Islamic Audio Library",
+    "short_name": "Hire Kalam",
+    "description": "Explore the best Islamic audio library with Quran recitations, Duas, Urdu Bayan, and Naat Sharif.",
+    "start_url": "/islamic-audio-player/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#ff0000",
+    "icons": [
+        {
+            "src": "islamic-icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "islamic-icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "scope": "/islamic-audio-player/"
+}
