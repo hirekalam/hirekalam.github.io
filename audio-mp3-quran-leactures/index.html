@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional web design, development, and digital marketing services in Dubai, UAE, and worldwide. Affordable and reliable solutions by Kalam for small businesses.">
-    <meta name="keywords" content="Web Design Dubai, Digital Marketing UAE, Web Development Worldwide, SEO Services, IT Solutions Dubai">
-    <title>Services - Hire Kalam | Web Design, Development & Digital Marketing in Dubai, UAE</title>
-    <link rel="icon" href="profile webp.webp" type="image/x-icon">
-
-    <!-- Font Awesome -->
+    <meta name="description" content="Explore the best Islamic audio library with beautiful Quran recitations, Duas, Urdu Bayan, and Naat Sharif. Listen online and download MP3s for personal use.">
+    <meta name="keywords" content="Islamic Audio, Quran Recitation, Beautiful Dua, Urdu Bayan, Naat Sharif, Audio Player, Download Islamic Tracks">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <link rel="canonical" href="https://hirekalam.com/islamic-audio-player/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Best Islamic Audio Library ❤️ - Quran, Duas, Bayan, Naat MP3 Online">
+    <meta property="og:description" content="Explore the best Islamic audio library with beautiful Quran recitations, Duas, Urdu Bayan, and Naat Sharif. Listen online and download MP3s for personal use.">
+    <meta property="og:url" content="https://hirekalam.com/islamic-audio-player/">
+    <meta property="og:site_name" content="Hire Kalam - Islamic Audio Library">
+    <meta property="og:updated_time" content="2025-05-03T12:00:00+00:00">
+    <meta property="article:published_time" content="2025-05-03T12:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-03T12:00:00+00:00">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best Islamic Audio Library ❤️ - Quran, Duas, Bayan, Naat MP3 Online">
+    <meta name="twitter:description" content="Explore the best Islamic audio library with beautiful Quran recitations, Duas, Urdu Bayan, and Naat Sharif. Listen online and download MP3s for personal use.">
+    <title>Best Islamic Audio Library ❤️ - Hire Kalam</title>
+    <link rel="icon" href="islamic-icon.webp" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
@@ -21,30 +29,35 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         body {
             background: #000;
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
         }
-        #three-canvas {
+
+        #particles-canvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
+            background: #000;
         }
+
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1.5rem 5%;
-            background: rgba(0, 0, 0, 0.699);
+            padding: 1rem 5%;
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid #ff0000;
         }
+
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -52,6 +65,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .logo {
             font-size: 2rem;
             background: linear-gradient(45deg, #ff0000, #ff6b6b);
@@ -59,19 +73,23 @@
             -webkit-text-fill-color: transparent;
             font-weight: 700;
         }
+
         .nav-links {
             display: flex;
             gap: 2rem;
         }
+
         .nav-links a {
             color: #fff;
             text-decoration: none;
             position: relative;
             padding: 0.5rem 0;
         }
+
         .nav-links a.active {
             color: #ff0000;
         }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -82,61 +100,303 @@
             background: #ff0000;
             transition: width 0.3s ease;
         }
+
         .nav-links a:hover::after {
             width: 100%;
         }
-        .services {
+
+        .cta-button {
+            background: #ff0000;
+            color: #fff;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background: #ff3333;
+            transform: scale(1.05);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 1rem;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        .hero {
+            padding: 10rem 5% 5rem;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            border: 3px solid #ff0000;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ff0000;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .audio-player-section {
             padding: 5rem 5%;
-            margin-top: 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+
+        .audio-player-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff0000;
+            text-align: center;
         }
-        .service-card {
-            background: rgba(255, 255, 255, 0.05);
+
+        .audio-player-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .audioigniter-root {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
+            margin-bottom: 3rem;
+        }
+
+        .ai-wrap {
+            width: 100%;
+        }
+
+        .ai-player-full {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .ai-cover {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #ff0000;
+            margin: 0 auto;
+        }
+
+        .ai-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .ai-audio-control {
+            background: #ff0000;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .ai-audio-control:hover {
+            background: #ff3333;
+        }
+
+        .ai-progress {
+            flex: 1;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .ai-track-progress {
+            height: 100%;
+            background: linear-gradient(270deg, #0d9bc6 0%, #ff0000 100%);
+            width: 0;
+            transition: width 0.1s linear;
+        }
+
+        .ai-volume {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ai-volume-bar {
+            width: 100px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .ai-volume-level {
+            height: 100%;
+            background: #ff0000;
+            width: 100%;
+        }
+
+        .ai-tracklist {
+            max-height: 185px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .ai-tracklist::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .ai-tracklist::-webkit-scrollbar-thumb {
+            background: #ff0000;
+            border-radius: 10px;
+        }
+
+        .ai-track {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .ai-track:hover, .ai-track.ai-track-active {
+            background: rgba(255, 0, 0, 0.3);
+        }
+
+        .ai-track-cover {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+
+        .ai-track-info {
+            flex: 1;
+        }
+
+        .ai-track-title {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .ai-track-artist {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .ai-track-download {
+            color: #ff0000;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .ai-track-download:hover {
+            text-decoration: underline;
+        }
+
+        .about-section, .support-section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section h2, .support-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff0000;
+        }
+
+        .about-section p, .support-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .support-section .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background: #ff0000;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+
+        .support-section .cta-button:hover {
+            background: #ff3333;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
         }
-        .service-card i {
-            font-size: 2.5rem;
-            color: #ff0000;
-            margin-bottom: 1rem;
-        }
-        .service-card h3 {
-            color: rgb(255, 0, 0);
-        }
+
         footer {
             background: rgba(0, 0, 0, 0.9);
             padding: 1.5rem 5%;
             text-align: center;
             border-top: 1px solid #ff0000;
         }
-        footer p {
-            color: #fff;
-            font-size: 0.9rem;
-        }
+
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 1rem;
             margin-bottom: 1rem;
         }
+
         .footer-links a {
             color: #fff;
             text-decoration: none;
         }
+
         .footer-links a:hover {
             color: #ff0000;
         }
+
         .social-icons {
             position: fixed;
             right: 2rem;
@@ -147,6 +407,7 @@
             gap: 1.5rem;
             z-index: 1000;
         }
+
         .social-icons a {
             width: 45px;
             height: 45px;
@@ -157,11 +418,14 @@
             justify-content: center;
             color: #fff;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
+
         .social-icons a:hover {
             background: #ff0000;
             transform: scale(1.1);
         }
+
         .back-to-top {
             position: fixed;
             bottom: 2rem;
@@ -176,69 +440,240 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .hero {
+                padding: 8rem 5% 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .ai-cover {
+                width: 150px;
+                height: 150px;
+            }
+
+            .ai-controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .ai-volume {
+                width: 100%;
+            }
+
+            .ai-volume-bar {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <canvas id="three-canvas"></canvas>
+    <canvas id="particles-canvas"></canvas>
 
     <nav>
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">Hire Kalam</a>
-            </div>
+            <div class="logo"><a href="index.html">Hire Kalam</a></div>
             <div class="nav-links">
-                <a href="https://hirekalam.github.io/">Home</a>
-                <a href="https://hirekalam.github.io/services/">Services</a>
-                <a href="https://hirekalam.github.io/projects/">Projects</a>
-                <a href="https://hirekalam.github.io/about-me/">About Me</a>
-                <a href="https://hirekalam.github.io/contact/" class="active">Contact</a>
-                <a href="https://hirekalam.github.io/blog">Blog</a>
-                <a href="https://wa.me/+917255965136" class="cta-button">Hire Now!</a>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About Me</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+                <a href="wa.me/+917255965136" class="cta-button">Hire Now!</a>
             </div>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
-    <section class="services">
-        <div class="container">
-            <h2 data-aos="fade-up">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card" data-aos="zoom-in">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Exceptional Web Design</h3>
-                    <p>Custom-built websites with cutting-edge design and seamless functionality for clients in Dubai, UAE, and worldwide.</p>
+    <section class="hero">
+        <img src="islamic-hero.jpg" alt="Islamic Audio Hero">
+        <h1>Best Islamic Audio Library ❤️</h1>
+        <p>Listen to Beautiful Quran Recitations, Duas, Urdu Bayan, and Naat Sharif Online</p>
+    </section>
+
+    <section class="audio-player-section">
+        <h2>Beautiful Quran Recitation Audio</h2>
+        <p>Experience soulful Quran recitations with the most beautiful voices, perfect for spiritual reflection.</p>
+        <div class="audioigniter-root" id="audioigniter-1">
+            <div class="ai-wrap ai-player-full">
+                <img class="ai-cover" src="quran-art1.jpg" alt="Quran Album Art">
+                <div class="ai-controls">
+                    <button class="ai-audio-control ai-play" title="Play"><i class="fas fa-play"></i></button>
+                    <button class="ai-audio-control ai-pause" title="Pause" style="display: none;"><i class="fas fa-pause"></i></button>
+                    <button class="ai-audio-control ai-prev" title="Previous track"><i class="fas fa-step-backward"></i></button>
+                    <button class="ai-audio-control ai-next" title="Next track"><i class="fas fa-step-forward"></i></button>
+                    <div class="ai-progress">
+                        <div class="ai-track-progress"></div>
+                    </div>
+                    <div class="ai-volume">
+                        <button class="ai-audio-control ai-volume-btn"><i class="fas fa-volume-up"></i></button>
+                        <div class="ai-volume-bar">
+                            <div class="ai-volume-level"></div>
+                        </div>
+                    </div>
+                    <button class="ai-audio-control ai-shuffle" title="Shuffle"><i class="fas fa-random"></i></button>
                 </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Apps Development</h3>
-                    <p>Native and cross-platform mobile applications for all devices, serving businesses globally and in Dubai.</p>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Digital Marketing</h3>
-                    <p>Data-driven marketing strategies for business growth in UAE and international markets.</p>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-server"></i>
-                    <h3>Web Hosting</h3>
-                    <p>Secure and reliable hosting solutions with 99.9% uptime for clients worldwide.</p>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fas fa-palette"></i>
-                    <h3>Graphic Design</h3>
-                    <p>Professional branding and visual identity solutions for companies in Dubai and beyond.</p>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
-                    <i class="fas fa-video"></i>
-                    <h3>Video Editing</h3>
-                    <p>Professional video production and editing services for global and UAE-based clients.</p>
+                <div class="ai-tracklist">
+                    <div class="ai-track" data-src="audio-mp3-quran-leactures/quran by k.mp3" data-cover="quran-art1.jpg" data-artist="Sheikh Mishary">
+                        <img class="ai-track-cover" src="quran-art1.jpg" alt="Track Cover">
+                        <div class="ai-track-info">
+                            <div class="ai-track-title">Surah Al-Fatiha</div>
+                            <div class="ai-track-artist">Sheikh Mishary</div>
+                        </div>
+                        <a class="ai-track-download" href="audio-mp3-quran-leactures/quran by k.mp3" download>Download</a>
+                    </div>
+                    <div class="ai-track" data-src="audio-mp3-quran-leactures/quran by k.mp3" data-cover="quran-art2.jpg" data-artist="Sheikh Sudais">
+                        <img class="ai-track-cover" src="quran-art2.jpg" alt="Track Cover">
+                        <div class="ai-track-info">
+                            <div class="ai-track-title">Surah Al-Baqarah</div>
+                            <div class="ai-track-artist">Sheikh Sudais</div>
+                        </div>
+                        <a class="ai-track-download" href="audio-mp3-quran-leactures/quran by k.mp3" download>Download</a>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <h2>Most Beautiful Dua Audio</h2>
+        <p>Listen to heart-touching Duas from albums that inspire peace and devotion.</p>
+        <div class="audioigniter-root" id="audioigniter-2">
+            <div class="ai-wrap ai-player-full">
+                <img class="ai-cover" src="dua-art1.jpg" alt="Dua Album Art">
+                <div class="ai-controls">
+                    <button class="ai-audio-control ai-play" title="Play"><i class="fas fa-play"></i></button>
+                    <button class="ai-audio-control ai-pause" title="Pause" style="display: none;"><i class="fas fa-pause"></i></button>
+                    <button class="ai-audio-control ai-prev" title="Previous track"><i class="fas fa-step-backward"></i></button>
+                    <button class="ai-audio-control ai-next" title="Next track"><i class="fas fa-step-forward"></i></button>
+                    <div class="ai-progress">
+                        <div class="ai-track-progress"></div>
+                    </div>
+                    <div class="ai-volume">
+                        <button class="ai-audio-control ai-volume-btn"><i class="fas fa-volume-up"></i></button>
+                        <div class="ai-volume-bar">
+                            <div class="ai-volume-level"></div>
+                        </div>
+                    </div>
+                    <button class="ai-audio-control ai-shuffle" title="Shuffle"><i class="fas fa-random"></i></button>
+                </div>
+                <div class="ai-tracklist">
+                    <div class="ai-track" data-src="dua1.mp3" data-cover="dua-art1.jpg" data-artist="Islamic Studio">
+                        <img class="ai-track-cover" src="dua-art1.jpg" alt="Track Cover">
+                        <div class="ai-track-info">
+                            <div class="ai-track-title">Dua for Forgiveness</div>
+                            <div class="ai-track-artist">Islamic Studio</div>
+                        </div>
+                        <a class="ai-track-download" href="dua1.mp3" download>Download</a>
+                    </div>
+                    <div class="ai-track" data-src="dua2.mp3" data-cover="dua-art2.jpg" data-artist="Islamic Studio">
+                        <img class="ai-track-cover" src="dua-art2.jpg" alt="Track Cover">
+                        <div class="ai-track-info">
+                            <div class="ai-track-title">Dua for Guidance</div>
+                            <div class="ai-track-artist">Islamic Studio</div>
+                        </div>
+                        <a class="ai-track-download" href="dua2.mp3" download>Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Online MP3 Urdu Bayan</h2>
+        <p>Engage with insightful Urdu Bayan sessions to deepen your understanding of Islam.</p>
+        <div class="audioigniter-root" id="audioigniter-3">
+            <div class="ai-wrap ai-player-full">
+                <img class="ai-cover" src="bayan-art1.jpg" alt="Bayan Album Art">
+                <div class="ai-controls">
+                    <button class="ai-audio-control ai-play" title="Play"><i class="fas fa-play"></i></button>
+                    <button class="ai-audio-control ai-pause" title="Pause" style="display: none;"><i class="fas fa-pause"></i></button>
+                    <button class="ai-audio-control ai-prev" title="Previous track"><i class="fas fa-step-backward"></i></button>
+                    <button class="ai-audio-control ai-next" title="Next track"><i class="fas fa-step-forward"></i></button>
+                    <div class="ai-progress">
+                        <div class="ai-track-progress"></div>
+                    </div>
+                    <div class="ai-volume">
+                        <button class="ai-audio-control ai-volume-btn"><i class="fas fa-volume-up"></i></button>
+                        <div class="ai-volume-bar">
+                            <div class="ai-volume-level"></div>
+                        </div>
+                    </div>
+                    <button class="ai-audio-control ai-shuffle" title="Shuffle"><i class="fas fa-random"></i></button>
+                </div>
+                <div class="ai-tracklist">
+                    <div class="ai-track" data-src="bayan1.mp3" data-cover="bayan-art1.jpg" data-artist="Maulana Tariq">
+                        <img class="ai-track-cover" src="bayan-art1.jpg" alt="Track Cover">
+                        <div class="ai-track-info">
+                            <div class="ai-track-title">Importance of Salah</div>
+                            <div class="ai-track-artist">Maulana Tariq</div>
+                        </div>
+                        <a class="ai-track-download" href="bayan1.mp3" download>Download</a>
+                    </div>
+                    <div class="ai-track" data-src="bayan2.mp3" data-cover="bayan-art2.jpg" data-artist="Maulana Tariq">
+                        <img class="ai-track-cover" src="bayan-art2.jpg" alt="Track Cover">
+                        <div class="ai-track-info">
+                            <div class="ai-track-title">Life of the Prophet</div>
+                            <div class="ai-track-artist">Maulana Tariq</div>
+                        </div>
+                        <a class="ai-track-download" href="bayan2.mp3" download>Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Naat Sharif & Hamd Online MP3</h2>
+        <p>Enjoy soulful Naat and Hamd that uplift your spirit and connect you to divine love.</p>
+        <div class="audioigniter-root" id="audioigniter-4">
+            <div class="ai-wrap ai-player-full">
+                <img class="ai-cover" src="naat-art1.jpg" alt="Naat Album Art">
+                <div class="ai-controls">
+                    <button class="ai-audio-control ai-play" title="Play"><i class="fas fa-play"></i></button>
+                    <button class="ai-audio-control ai-pause" title="Pause" style="display: none;"><i class="fas fa-pause"></i></button>
+                    <button class="ai-audio-control ai-prev" title="Previous track"><i class="fas fa-step-backward"></i></button>
+                    <button class="ai-audio-control ai-next" title="Next track"><i class="fas fa-step-forward"></i></button>
+                    <div class="ai-progress">
+                        <div class="ai-track-progress"></div>
+                    </div>
+                    <div class="ai-volume">
+                        <button class="ai-audio-control ai-volume-btn"><i class="fas fa-volume-up"></i></button>
+                        <div class="ai-volume-bar">
+                            <div class="ai-volume-level"></div>
+                        </div>
+                    </div>
+                    <button class="ai-audio-control ai-shuffle" title="Shuffle"><i class="fas fa-random"></i></button>
+                </div>
+                <div class="ai-tracklist">
+                    <div class="ai-track" data-src="naat1.mp3" data-cover="naat-art1.jpg" data-artist="Owais Qadri">
+                        <img class="ai-track-cover" src="naat-art1.jpg" alt="Track Cover">
+                        <div class="ai-track-info">
+                            <div class="ai-track-title">Tala'al Badru</div>
+                            <div class="ai-track-artist">Owais Qadri</div>
+                        </div>
+                        <a class="ai-track-download" href="naat1.mp3" download>Download</a>
+                    </div>
+                    <div class="ai-track" data-src="naat2.mp3" data-cover="naat-art2.jpg" data-artist="Owais Qadri">
+                        <img class="ai-track-cover" src="naat-art2.jpg" alt="Track Cover">
+                        <div class="ai-track-info">
+                            <div class="ai-track-title">Ya Nabi Salam</div>
+                            <div class="ai-track-artist">Owais Qadri</div>
+                        </div>
+                        <a class="ai-track-download" href="naat2.mp3" download>Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2>Enjoy Heart Touching Islamic Audio</h2>
+        <p>Our Islamic audio library is curated to provide a seamless and spiritually enriching experience, featuring Quran recitations, Duas, Urdu Bayan, and Naat Sharif for personal reflection and growth.</p>
+    </section>
+
+    <section class="support-section">
+        <h2>Support This Project</h2>
+        <p>Help us make this project even more heart-touching by supporting our efforts to bring more Islamic audio content to you.</p>
+        <a href="https://www.paypal.com/paypalme/donatefordawah" class="cta-button">Support ❤️</a>
     </section>
 
     <footer>
@@ -246,8 +681,9 @@
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
+            <a href="about.html">About Me</a>
             <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
         </div>
         <p>© <span id="year"></span> Hire Kalam. All Rights Reserved.</p>
     </footer>
@@ -263,57 +699,245 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
     <script>
-        AOS.init();
+        // Particle Animation
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
 
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-canvas'), alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 500;
-        const posArray = new Float32Array(particlesCount * 3);
-        const colorsArray = new Float32Array(particlesCount * 3);
-
-        for (let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 100;
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
-        for (let i = 0; i < particlesCount; i++) {
-            colorsArray[i * 3] = 0;     // R (Red)
-            colorsArray[i * 3 + 0] = 0; // G
-            colorsArray[i * 3 + 0] = 1; // B 
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 4;
+                this.vy = (Math.random() - 0.5) * 4;
+                this.size = Math.random() * 2 + 1;
+                this.opacity = 0.5;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        const angle = Math.atan2(dy, dx);
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        this.vx += Math.cos(angle) * force * 5;
+                        this.vy += Math.sin(angle) * force * 5;
+                    }
+                }
+
+                this.vx = Math.max(Math.min(this.vx, 4), -4);
+                this.vy = Math.max(Math.min(this.vy, 4), -4);
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 0, 0, ${this.opacity})`;
+                ctx.fill();
+            }
         }
 
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorsArray, 3));
+        const particles = [];
+        for (let i = 0; i < 150; i++) {
+            particles.push(new Particle());
+        }
 
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.5,
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.8
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 100
+        };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
         });
 
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-
-        camera.position.z = 50;
+        window.addEventListener('click', () => {
+            for (let i = 0; i < 4; i++) {
+                particles.push(new Particle());
+            }
+        });
 
         function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach((p1, i) => {
+                p1.update();
+                p1.draw();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(255, 0, 0, ${1 - distance / 100})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            });
+
             requestAnimationFrame(animate);
-            particlesMesh.rotation.y += 0.001;
-            particlesMesh.rotation.x += 0.001;
-            renderer.render(scene, camera);
         }
         animate();
 
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const hamburgerIcon = hamburger.querySelector('i');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-times');
+            } else {
+                hamburgerIcon.classList.remove('fa-times');
+                hamburgerIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Audio Player Functionality
+        document.querySelectorAll('.audioigniter-root').forEach(player => {
+            const playBtn = player.querySelector('.ai-play');
+            const pauseBtn = player.querySelector('.ai-pause');
+            const prevBtn = player.querySelector('.ai-prev');
+            const nextBtn = player.querySelector('.ai-next');
+            const progressBar = player.querySelector('.ai-track-progress');
+            const volumeBtn = player.querySelector('.ai-volume-btn');
+            const volumeBar = player.querySelector('.ai-volume-level');
+            const shuffleBtn = player.querySelector('.ai-shuffle');
+            const coverImg = player.querySelector('.ai-cover');
+            const tracks = player.querySelectorAll('.ai-track');
+            const audio = new Audio();
+            let currentTrack = 0;
+            let isPlaying = false;
+            let isShuffled = false;
+            let shuffledIndices = [];
+
+            function loadTrack(index) {
+                const track = tracks[index];
+                audio.src = track.getAttribute('data-src');
+                coverImg.src = track.getAttribute('data-cover');
+                tracks.forEach(t => t.classList.remove('ai-track-active'));
+                track.classList.add('ai-track-active');
+                updateProgress();
+            }
+
+            function playTrack() {
+                audio.play();
+                isPlaying = true;
+                playBtn.style.display = 'none';
+                pauseBtn.style.display = 'inline-block';
+            }
+
+            function pauseTrack() {
+                audio.pause();
+                isPlaying = false;
+                playBtn.style.display = 'inline-block';
+                pauseBtn.style.display = 'none';
+            }
+
+            function updateProgress() {
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = `${percent}%`;
+                if (!audio.paused && !isNaN(audio.duration)) {
+                    requestAnimationFrame(updateProgress);
+                }
+            }
+
+            function shuffleTracks() {
+                if (!isShuffled) {
+                    shuffledIndices = Array.from({length: tracks.length}, (_, i) => i);
+                    for (let i = shuffledIndices.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
+                    }
+                    isShuffled = true;
+                    shuffleBtn.style.background = '#ff3333';
+                } else {
+                    isShuffled = false;
+                    shuffleBtn.style.background = '#ff0000';
+                }
+            }
+
+            playBtn.addEventListener('click', () => {
+                if (!audio.src) loadTrack(currentTrack);
+                playTrack();
+            });
+
+            pauseBtn.addEventListener('click', pauseTrack);
+
+            prevBtn.addEventListener('click', () => {
+                currentTrack = isShuffled ? 
+                    (shuffledIndices[currentTrack] - 1 + tracks.length) % tracks.length :
+                    (currentTrack - 1 + tracks.length) % tracks.length;
+                loadTrack(isShuffled ? shuffledIndices[currentTrack] : currentTrack);
+                if (isPlaying) playTrack();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentTrack = isShuffled ? 
+                    (shuffledIndices[currentTrack] + 1) % tracks.length :
+                    (currentTrack + 1) % tracks.length;
+                loadTrack(isShuffled ? shuffledIndices[currentTrack] : currentTrack);
+                if (isPlaying) playTrack();
+            });
+
+            audio.addEventListener('ended', () => {
+                nextBtn.click();
+            });
+
+            progressBar.parentElement.addEventListener('click', (e) => {
+                const rect = progressBar.parentElement.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                audio.currentTime = percent * audio.duration;
+            });
+
+            volumeBtn.addEventListener('click', () => {
+                audio.muted = !audio.muted;
+                volumeBtn.querySelector('i').classList.toggle('fa-volume-up');
+                volumeBtn.querySelector('i').classList.toggle('fa-volume-mute');
+            });
+
+            volumeBar.parentElement.addEventListener('click', (e) => {
+                const rect = volumeBar.parentElement.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                audio.volume = percent;
+                volumeBar.style.width = `${percent * 100}%`;
+            });
+
+            shuffleBtn.addEventListener('click', shuffleTracks);
+
+            tracks.forEach((track, index) => {
+                track.addEventListener('click', () => {
+                    currentTrack = index;
+                    loadTrack(isShuffled ? shuffledIndices[currentTrack] : currentTrack);
+                    playTrack();
+                });
+            });
+
+            loadTrack(currentTrack);
         });
     </script>
 </body>
