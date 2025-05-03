@@ -95,7 +95,7 @@
         .cta-button {
             background: #ff0000;
             color: #fff;
-            padding: 0.3rem 1rem;
+            padding: 0.3rem 1.5rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 500;
@@ -448,8 +448,8 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 4;
-                this.vy = (Math.random() - 0.5) * 4;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
                 this.size = Math.random() * 2 + 1;
                 this.opacity = 0.5;
             }
@@ -468,8 +468,8 @@
                     if (distance < mouse.radius) {
                         const angle = Math.atan2(dy, dx);
                         const force = (mouse.radius - distance) / mouse.radius;
-                        this.vx += Math.cos(angle) * force * 5;
-                        this.vy += Math.sin(angle) * force * 5;
+                        this.vx += Math.cos(angle) * force * 1.5;
+                        this.vy += Math.sin(angle) * force * 1.5;
                     }
                 }
 
@@ -509,10 +509,27 @@
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
+
+            particles.forEach((p1, i) => {
+                p1.update();
+                p1.draw();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(255, 0, 0, ${1 - distance / 100})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
             });
+
             requestAnimationFrame(animate);
         }
         animate();
