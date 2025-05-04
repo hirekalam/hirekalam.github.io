@@ -6,13 +6,8 @@
     <meta name="description" content="Looking for the best digital marketing freelancer in Dubai, UAE or Worldwide? Kalam offers professional web design, development & ROI-driven marketing services for small businesses. Fast, affordable, and reliable.">
     <meta name="keywords" content="Web Design, Digital Marketing, SEO, Dubai IT Company, Web Development">
     <title>Hire Kalam in UAE/Worldwide | Top-Rated Web Design, Development & Affordable Digital Marketing Services</title>
-    <title>HTML Favicon</title>
+    <link rel="icon" href="profile.webp" type="image/webp">
 
-    <!-- Add icon link -->
-    <link rel="icon" href="profile webp.webp" type="image/x-icon">
-
-
-<body>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -100,6 +95,13 @@
             width: 100%;
         }
 
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #fff;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -153,6 +155,12 @@
             padding: 5rem 5%;
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -181,6 +189,32 @@
 
         .service-card h3 {
             color: rgb(255, 0, 0);
+        }
+
+        .view-all-button {
+            display: block;
+            text-align: center;
+            margin: 2rem auto 0;
+            background: #ff0000;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: fit-content;
+            animation: pulse 2s infinite;
+        }
+
+        .view-all-button:hover {
+            background: #ff3333;
+            transform: translateY(-2px);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         /* Projects Section */
@@ -253,6 +287,45 @@
             margin-bottom: 1rem;
         }
 
+        /* Footer Links */
+        .footer-links {
+            padding: 3rem 5%;
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 1px solid #ff0000;
+        }
+
+        .footer-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links-column h4 {
+            color: #ff0000;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links-column ul {
+            list-style: none;
+        }
+
+        .footer-links-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links-column ul li a:hover {
+            color: #ff0000;
+        }
+
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.9);
@@ -287,6 +360,7 @@
             align-items: center;
             justify-content: center;
             color: #fff;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
 
@@ -313,8 +387,28 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.5rem;
+                text-align: center;
             }
 
             .hero h1 {
@@ -324,6 +418,10 @@
             .social-icons {
                 right: 1rem;
             }
+
+            .footer-links-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -331,26 +429,30 @@
     <!-- Particles Background -->
     <canvas id="three-canvas"></canvas>
 
-<!-- Navigation -->
-<nav>
-    <div class="nav-container">
-        <div class="logo">
-            <a href="/">Hire Kalam</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/">Hire Kalam</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <a href="https://hirekalam.github.io/">Home</a>
+                <a href="https://hirekalam.github.io/services/">Services</a>
+                <a href="https://hirekalam.github.io/projects/">Projects</a>
+                <a href="https://hirekalam.github.io/about-me/">About Me</a>
+                <a href="https://hirekalam.github.io/contact/" class="active">Contact</a>
+                <a href="https://hirekalam.github.io/blog/">Blog</a>
+            </div>
         </div>
-        <div class="nav-links">
-            <a href="https://hirekalam.github.io/">Home</a>
-            <a href="https://hirekalam.github.io/services/">Services</a>
-            <a href="https://hirekalam.github.io/projects/">Projects</a>
-            <a href="https://hirekalam.github.io/about-me/">About Me</a>
-            <a href="https://hirekalam.github.io/contact/" class="active">Contact</a>
-            <a href="https://hirekalam.github.io/blog">Blog</a>
-        </div>
-    </div>
-</nav>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content" data-aos="fade-up">
-            <img src="profile webp.webp" alt="Profile Photo" class="profile-photo">
+            <img src="profile.webp" alt="Profile Photo" class="profile-photo">
             <h1>Hire Kalam</h1>
             <p>And transform your digital presence with cutting-edge solutions <br> My Name is Kalam, I'm professional Digital Marketer and Web Developer from India. I've been worked on so many successful projects. I love to be updated with IT and I love Designing too.</p>
             <a href="wa.me/+917255965136" class="cta-button">Hire Now!</a>
@@ -393,6 +495,7 @@
                     <p>Professional video production and editing services</p>
                 </div>
             </div>
+            <a href="https://hirekalam.github.io/services/" class="view-all-button" data-aos="fade-up">View All Services</a>
         </div>
     </section>
 
@@ -418,7 +521,7 @@
                 </div>
                 <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                     <h3>Zevroc Training Institute</h3>
-                    <p>Leadning IT Institute in Delhi NCR</p>
+                    <p>Leading IT Institute in Delhi NCR</p>
                     <a href="https://zevroc.com/" target="_blank">Visit Website</a>
                 </div>
                 <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
@@ -442,11 +545,12 @@
                     <a href="https://bathua.com" target="_blank">Visit Website</a>
                 </div>
                 <div class="project-card" data-aos="zoom-in" data-aos-delay="800">
-                        <h3>Vacuum Cleaners Review Blog</h3>
-                        <p>Ongoing Project</p>
-                        <a href="https://bestvacuum.blog" target="_blank">Visit Website</a>
+                    <h3>Vacuum Cleaners Review Blog</h3>
+                    <p>Ongoing Project</p>
+                    <a href="https://bestvacuum.blog" target="_blank">Visit Website</a>
                 </div>
             </div>
+            <a href="https://hirekalam.github.io/projects/" class="view-all-button" data-aos="fade-up">View All Projects</a>
         </div>
     </section>
 
@@ -474,10 +578,40 @@
         </div>
     </section>
 
+    <!-- Footer Links -->
+    <section class="footer-links">
+        <div class="footer-links-grid">
+            <div class="footer-links-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://hirekalam.github.io/">Home</a></li>
+                    <li><a href="https://hirekalam.github.io/services/">Services</a></li>
+                    <li><a href="https://hirekalam.github.io/projects/">Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="https://hirekalam.github.io/about-me/">About Me</a></li>
+                    <li><a href="https://hirekalam.github.io/contact/">Contact</a></li>
+                    <li><a href="https://hirekalam.github.io/blog/">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; <span id="year"></span> Hire Kalam. All Rights Reserved.</p>
+            <p>© <span id="year"></span> Hire Kalam. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -498,7 +632,27 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
     <script>
+        // AOS Initialization
         AOS.init();
+
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Set Footer Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'flex' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
         // Three.js 3D Background
         const scene = new THREE.Scene();
