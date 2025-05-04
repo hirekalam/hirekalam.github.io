@@ -200,7 +200,7 @@
             padding: 0.8rem 2rem;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 500 | 600;
             transition: all 0.3s ease;
             width: fit-content;
             animation: pulse 2s infinite;
@@ -289,40 +289,27 @@
 
         /* Footer Links */
         .footer-links {
-            padding: 3rem 5%;
+            padding: 2rem 5%;
             background: rgba(0, 0, 0, 0.9);
             border-top: 1px solid #ff0000;
+            text-align: center;
         }
 
-        .footer-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links-column h4 {
-            color: #ff0000;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-links-column ul {
+        .footer-links ul {
             list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .footer-links-column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links-column ul li a {
+        .footer-links ul li a {
             color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        .footer-links-column ul li a:hover {
+        .footer-links ul li a:hover {
             color: #ff0000;
         }
 
@@ -419,8 +406,9 @@
                 right: 1rem;
             }
 
-            .footer-links-grid {
-                grid-template-columns: 1fr;
+            .footer-links ul {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -443,7 +431,7 @@
                 <a href="https://hirekalam.github.io/services/">Services</a>
                 <a href="https://hirekalam.github.io/projects/">Projects</a>
                 <a href="https://hirekalam.github.io/about-me/">About Me</a>
-                <a href="https://hirekalam.github.io/contact/" class="active">Contact</a>
+                <a href="https://hirekalam.github.io/contact/">Contact</a>
                 <a href="https://hirekalam.github.io/blog/">Blog</a>
             </div>
         </div>
@@ -580,32 +568,14 @@
 
     <!-- Footer Links -->
     <section class="footer-links">
-        <div class="footer-links-grid">
-            <div class="footer-links-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="https://hirekalam.github.io/">Home</a></li>
-                    <li><a href="https://hirekalam.github.io/services/">Services</a></li>
-                    <li><a href="https://hirekalam.github.io/projects/">Projects</a></li>
-                </ul>
-            </div>
-            <div class="footer-links-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="https://hirekalam.github.io/about-me/">About Me</a></li>
-                    <li><a href="https://hirekalam.github.io/contact/">Contact</a></li>
-                    <li><a href="https://hirekalam.github.io/blog/">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-links-column">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
+        <ul>
+            <li><a href="https://hirekalam.github.io/">Home</a></li>
+            <li><a href="https://hirekalam.github.io/services/">Services</a></li>
+            <li><a href="https://hirekalam.github.io/projects/">Projects</a></li>
+            <li><a href="https://hirekalam.github.io/about-me/">About Me</a></li>
+            <li><a href="https://hirekalam.github.io/contact/">Contact</a></li>
+            <li><a href="https://hirekalam.github.io/blog/">Blog</a></li>
+        </ul>
     </section>
 
     <!-- Footer -->
